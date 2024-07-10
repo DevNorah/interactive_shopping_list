@@ -1,5 +1,5 @@
 function createAnElement(element){
-    return document.createAnElement(element);
+    return document.createElement(element);
 }
  
 function addText(element, text){
