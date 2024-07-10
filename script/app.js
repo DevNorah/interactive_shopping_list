@@ -30,6 +30,7 @@ const ol = select ('ol');
 listen(document, 'DOMContentLoaded' , displayItems);
 
 function displayItems() {
+    ol.innerHTML = '';
     shoppingList.forEach(createAListItem);
 }
 
@@ -39,3 +40,16 @@ function createAListItem(item) {
     appendChild(li, ol);
 }
 
+const form = select('form');
+listen(form, 'submit', addItem);
+
+function addItem(event){
+    event.preventDefault();
+    
+    shoppingList.push(event.target[0].value);
+   
+    displayItems();
+
+    event.target.reset();
+   
+}
